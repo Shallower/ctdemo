@@ -1,6 +1,6 @@
 # 车童网小程序Demo 基于Taro2.2.8 + dva + webpack4 + redux4 + typescript + scss等而构建
 
-## `taro-trip`
+## `ctdemo`
 > [Taro](http://taro-docs.jd.com/taro/docs/README.html)
 > [Taro-UI](https://taro-ui.jd.com/#/docs/introduction)
 > [Dva](https://dvajs.com/guide/)
