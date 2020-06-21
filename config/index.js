@@ -1,3 +1,4 @@
+const path = require('path')
 const config = {
   projectName: 'ctdemo',
   date: '2020-6-16',
@@ -64,6 +65,57 @@ const config = {
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
+        }
+      }
+    }
+  },
+  copy: {
+    patterns: [
+    ],
+    options: {
+    }
+  },
+  alias: {
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+    '@/assets': path.resolve(__dirname, '..', 'src/assets')
+  },
+  weapp: {
+    compile: {
+      exclude: [
+        // 'src/components/Echarts/ec-canvas/echarts.js'
+      ]
+    },
+    module: {
+      postcss: {
+        autoprefixer: {
+          enable: true,
+          config: {
+            browsers: [
+              'last 3 versions',
+              'Android >= 4.1',
+              'ios >= 8'
+            ]
+          }
+        },
+        pxtransform: {
+          enable: true,
+          config: {
+
+          }
+        },
+        url: {
+          enable: true,
+          config: {
+            limit: 10240 // 设定转换尺寸上限
+          }
+        },
+        cssModules: {
+          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+          config: {
+            namingPattern: 'module', // 转换模式，取值为 global/module
+            generateScopedName: '[name]__[local]___[hash:base64:5]'
+          }
         }
       }
     }

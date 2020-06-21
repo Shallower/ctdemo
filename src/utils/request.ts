@@ -1,13 +1,6 @@
-/*
- * @Description: In User Settings Edit
- * @Author: your name
- * @Date: 2019-08-12 11:17:59
- * @LastEditTime: 2019-08-16 13:39:32
- * @LastEditors: Please set LastEditors
- */
 import Taro from '@tarojs/taro'
 import Tips from './tips'
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep'
 import pathToRegexp from 'path-to-regexp';
 
 declare type Methods = 'GET' | 'OPTIONS' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'CONNECT';
