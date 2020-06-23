@@ -3,7 +3,7 @@ import { View, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { AtGrid, AtSearchBar, AtCurtain, } from 'taro-ui'
 import { JdxBanner } from '@/components/index';
-import { setCacheData, getCacheData } from '@/utils'
+import { setCacheData, getCacheData } from '@/utils/store'
 import { bannersList } from '@/assets/data/banners'
 import './index.scss'
 
