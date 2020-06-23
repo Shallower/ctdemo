@@ -2,9 +2,9 @@ import Taro, { Config } from '@tarojs/taro'
 import { View, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { AtGrid, AtSearchBar, AtCurtain, } from 'taro-ui'
-import {JdxBanner} from '@/components/index'; 
+import { JdxBanner } from '@/components/index';
 import { setCacheData, getCacheData } from '@/utils'
-import {bannersList} from '@/assets/data/banners'
+import { bannersList } from '@/assets/data/banners'
 import './index.scss'
 
 interface IIndexProps {
@@ -114,7 +114,7 @@ export default class Index extends Taro.Component<IIndexProps, IIndexState> {
     navigationBarTextStyle: 'black'
   }
 
-  constructor(props: any){
+  constructor(props: any) {
     super(props)
     const guide = getCacheData('guide')
     this.state = {
@@ -123,25 +123,25 @@ export default class Index extends Taro.Component<IIndexProps, IIndexState> {
     }
   }
 
-  componentWillMount () { 
+  componentWillMount() {
     this.init()
   }
 
   init() {
-    const {dispatch}  = this.props
+    const { dispatch } = this.props
     dispatch({
       type: 'index/getHome'
     })
   }
-  
-  onChange() {}
-  render(){
+
+  onChange() { }
+  render() {
     const { data } = this.props
-    const { banners=bannersList, navbars } = data as IDataType
+    const { banners = bannersList, navbars } = data as IDataType
     const { keywords } = this.state
-    const navs = navbars?navbars.map((p: any, _) => {
-      return {image: p.image, value: p.name}
-    }):[]
+    const navs = navbars ? navbars.map((p: any, _) => {
+      return { image: p.image, value: p.name }
+    }) : []
     return (
       <View>
         <View className='search' >
@@ -150,29 +150,29 @@ export default class Index extends Taro.Component<IIndexProps, IIndexState> {
             onChange={this.onChange.bind(this)}
           />
         </View>
-        
-        <JdxBanner {...{banners}}  />
 
-        <View className='nav-1'> 
-          <AtGrid 
+        <JdxBanner {...{ banners }} />
+
+        <View className='nav-1'>
+          <AtGrid
             columnNum={navs.length}
-            data={navs} 
+            data={navs}
             hasBorder={false}
           />
         </View>
 
         <View className='nav-2'>
-          <AtGrid 
+          <AtGrid
             columnNum={3}
-            data={mainNavs} 
+            data={mainNavs}
           />
         </View>
 
         <View className='nav-3'>
-          <AtGrid 
+          <AtGrid
             columnNum={5}
-            data={subMenus} 
-            hasBorder={false} 
+            data={subMenus}
+            hasBorder={false}
           />
         </View>
         <AtCurtain

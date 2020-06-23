@@ -1,9 +1,9 @@
 import Taro, { Config } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
-import { View, Image, Text, Button  } from '@tarojs/components';
+import { View, Image, Text, Button } from '@tarojs/components';
 import { AtGrid, AtList, AtListItem, AtAvatar, AtIcon } from 'taro-ui'
-import './index.scss'
 import userDefaultLogo from '@/assets/images/user-logo.png'
+import './index.scss'
 
 interface IMineProps {
   user?: any
@@ -88,13 +88,13 @@ export default class Mine extends Taro.Component<IMineProps> {
     console.log('componentWillPreload', params)
   }
 
-  handleLoginClick(){
+  handleLoginClick() {
     Taro.navigateTo({
       url: '/packageA/pages/login/index'
     })
   }
 
-  handleNavigate(value){
+  handleNavigate(value) {
     const action = this.actions.get(value)
     action && action.call(this)
   }
@@ -102,18 +102,18 @@ export default class Mine extends Taro.Component<IMineProps> {
   onCantact(e) {
     console.log(e)
   }
-  render(){
+  render() {
     const { user } = this.props
     return (
       <View className='main'>
         <View className='at-row at-row__justify--center top'>
           {
-            user ? 
+            user ?
               <View className='at-col logo'>
-                <AtAvatar className='user-logo' circle image={user.avatarUrl?user.avatarUrl:userDefaultLogo} />
-                <Text className='username'>{user.nickName||user.phone}</Text>
+                <AtAvatar className='user-logo' circle image={user.avatarUrl ? user.avatarUrl : userDefaultLogo} />
+                <Text className='username'>{user.nickName || user.phone}</Text>
               </View>
-              : 
+              :
               <View className='at-col login'>
                 <View className='title'>登录携程，开启旅程</View>
                 <View className='button' onClick={this.handleLoginClick.bind(this)} >登录/注册</View>
@@ -121,9 +121,9 @@ export default class Mine extends Taro.Component<IMineProps> {
           }
         </View>
         <View className='nav'>
-          <AtGrid 
+          <AtGrid
             columnNum={navs.length}
-            data={navs} 
+            data={navs}
             hasBorder={false}
           />
         </View>
@@ -136,7 +136,7 @@ export default class Mine extends Taro.Component<IMineProps> {
             <AtListItem title='video' arrow='right' onClick={this.handleNavigate.bind(this, 3)} />
             <AtListItem title='优惠券' arrow='right' />
             <AtListItem title='我的特权' arrow='right' />
-            <AtListItem 
+            <AtListItem
               title='签到'
               arrow='right'
               extraText='签到到深圳'

@@ -1,4 +1,5 @@
-const path = require('path')
+import { resolve } from 'path'
+
 const config = {
   projectName: 'ctdemo',
   date: '2020-6-16',
@@ -76,9 +77,9 @@ const config = {
     }
   },
   alias: {
-    '@/components': path.resolve(__dirname, '..', 'src/components'),
-    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
-    '@/assets': path.resolve(__dirname, '..', 'src/assets')
+    '@/components': resolve(__dirname, '..', 'src/components'),
+    '@/utils': resolve(__dirname, '..', 'src/utils'),
+    '@/assets': resolve(__dirname, '..', 'src/assets')
   },
   weapp: {
     compile: {
@@ -146,9 +147,11 @@ const config = {
   }
 }
 
-module.exports = function (merge) {
+export default function (merge) {
   if (process.env.NODE_ENV === 'development') {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     return merge({}, config, require('./dev'))
   }
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   return merge({}, config, require('./prod'))
 }
