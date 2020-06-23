@@ -7,17 +7,17 @@ import { setCacheData, getCacheData } from '@/utils'
 import { bannersList } from '@/assets/data/banners'
 import './index.scss'
 
-interface IIndexProps {
+interface IndexProps {
   dispatch?: any;
-  data?: IDataType;
+  data?: DataType;
 }
 
-interface IDataType {
+interface DataType {
   navbars: any[];
   banners: any[];
 }
 
-interface IIndexState {
+interface IndexState {
   keywords: string;
   isOpened: boolean;
 }
@@ -106,7 +106,7 @@ const subMenus = [
   ...index,
   ...app
 }))
-export default class Index extends Taro.Component<IIndexProps, IIndexState> {
+export default class Index extends Taro.Component<IndexProps, IndexState> {
 
   config: Config = {
     navigationBarTitleText: '首页',
@@ -137,7 +137,7 @@ export default class Index extends Taro.Component<IIndexProps, IIndexState> {
   onChange() { }
   render() {
     const { data } = this.props
-    const { banners = bannersList, navbars } = data as IDataType
+    const { banners = bannersList, navbars } = data as DataType
     const { keywords } = this.state
     const navs = navbars ? navbars.map((p: any, _) => {
       return { image: p.image, value: p.name }
