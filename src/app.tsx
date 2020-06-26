@@ -74,8 +74,8 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/mine/index',
       'pages/index/index',
+      'pages/mine/index',
       'pages/target/index',
       'pages/camera/index',
       'pages/travel/index',
