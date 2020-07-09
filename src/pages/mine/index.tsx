@@ -131,7 +131,7 @@ export default class Mine extends Taro.Component<IMineProps> {
           <AtList hasBorder={false}>
             <AtListItem title='视频查勘' arrow='right' onClick={this.handleNavigate.bind(this, 4)} />
             <AtListItem title='Demo 分包测试' arrow='right' onClick={this.handleNavigate.bind(this, 0)} />
-            <AtListItem title='Taro UI Demo' arrow='right' onClick={this.handleNavigate.bind(this, 1)} />
+            {/* <AtListItem title='Taro UI Demo' arrow='right' onClick={this.handleNavigate.bind(this, 1)} /> */}
             {/* <AtListItem title='echarts 图表' arrow='right' onClick={this.handleNavigate.bind(this, 2)} /> */}
             <AtListItem title='video' arrow='right' onClick={this.handleNavigate.bind(this, 3)} />
             <AtListItem title='优惠券' arrow='right' />

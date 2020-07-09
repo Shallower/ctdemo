@@ -20,5 +20,6 @@ export const commonParame = {}
 export const requestConfig = {
   loginUrl: `POST ${MAIN_HOST}/api/user/wechat-auth`, // 微信登录接口
   getLists: `GET ${MAIN_HOST}/japi/toh`, // 获取历史上的今天接口
-  getHome: `GET ${ONLINE_HOST2}/mobile/home`
+  getHome: `GET ${ONLINE_HOST2}/mobile/home`,
+  serachIndex: `GET ${ONLINE_HOST2}/mobile/home`
 }

@@ -79,6 +79,7 @@ class App extends Component {
       'pages/target/index',
       'pages/camera/index',
       'pages/travel/index',
+      'pages/article/index',
     ],
     subPackages: [
       {
@@ -94,17 +95,17 @@ class App extends Component {
           'pages/trtc/verifycode',
         ]
       },
-      {
-        root: 'packageTaroUI',
-        pages: [
-          'index/index',
-          'Fab/index',
-          'Article/index',
-          'Countdown/index',
-          'Form/index',
-          'RichText/index',
-        ]
-      }
+      // {
+      //   root: 'packageTaroUI',
+      //   pages: [
+      //     'index/index',
+      //     'Fab/index',
+      //     'Article/index',
+      //     'Countdown/index',
+      //     'Form/index',
+      //     'RichText/index',
+      //   ]
+      // }
     ],
     preloadRule: {
       'pages/index/index': {

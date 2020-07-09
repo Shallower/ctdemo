@@ -1,6 +1,8 @@
 # 车童网小程序Demo 基于Taro2.2.8 + dva + webpack4 + redux4 + typescript + scss等而构建
+## 开发灵感来源于传递正能量~~约翰·D·洛克菲勒写给孩子的38封信
+### 该小程序项目仅在ctdemo项目上新建一letter分支，目的仅为分享，如有侵权请告知。
 
-## `ctdemo`
+## `ctdemo之letters`
 > [Taro](http://taro-docs.jd.com/taro/docs/README.html)
 > [Taro-UI](https://taro-ui.jd.com/#/docs/introduction)
 > [Dva](https://dvajs.com/guide/)
